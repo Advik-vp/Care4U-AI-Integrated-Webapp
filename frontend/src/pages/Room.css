@@ -1,0 +1,144 @@
+.room-container {
+  width: 100%;
+  height: 100vh;
+  background: #f7fafc;
+}
+
+.room-loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 20px;
+  color: #667eea;
+}
+
+.spinner-large {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(102, 126, 234, 0.2);
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.room-layout {
+  display: flex;
+  height: 100vh;
+  gap: 0;
+}
+
+/* Video Panel (Left) */
+.video-panel {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  background: #1a202c;
+}
+
+.panel-header {
+  background: white;
+  padding: 16px 24px;
+  border-bottom: 2px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #2d3748;
+}
+
+.room-id {
+  background: #edf2f7;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #4a5568;
+  font-family: monospace;
+}
+
+.video-container {
+  flex: 1;
+  position: relative;
+  background: #000;
+}
+
+.jitsi-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.coming-soon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #a0aec0;
+  gap: 10px;
+}
+
+.video-controls {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 12px 24px;
+  color: #e2e8f0;
+}
+
+.control-hint {
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Chat Panel (Right) */
+.chat-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-left: 2px solid #e2e8f0;
+  min-width: 350px;
+  max-width: 450px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .room-layout {
+    flex-direction: column;
+  }
+
+  .video-panel,
+  .chat-panel {
+    flex: 1;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .video-panel {
+    min-height: 50vh;
+  }
+
+  .chat-panel {
+    border-left: none;
+    border-top: 2px solid #e2e8f0;
+  }
+}
+
+@media (max-width: 768px) {
+  .panel-header {
+    padding: 12px 16px;
+  }
+
+  .panel-header h2 {
+    font-size: 16px;
+  }
+
+  .room-id {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}

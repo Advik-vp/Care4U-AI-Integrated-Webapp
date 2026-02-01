@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: care4u-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python backend/main.py
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: MONGODB_URI
+        fromDatabase:
+          name: care4u-mongodb
+          property: connectionString
+      - key: DEBUG
+        value: false
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: 10000
+      - key: AI_TIMEOUT
+        value: 30
+      - key: AI_MAX_RETRIES
+        value: 3
+      - key: AI_FALLBACK_ENABLED
+        value: true
+      - key: ENABLE_AI_CHAT
+        value: true
+      - key: ENABLE_SYMPTOM_CHECKER
+        value: true
+      - key: ENABLE_CARE_PLANS
+        value: true
+
+databases:
+  - name: care4u-mongodb
+    plan: free

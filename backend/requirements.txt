@@ -1,0 +1,8 @@
+Flask==3.0.0
+flask-cors==4.0.0
+flask-mail==0.9.1
+python-dotenv==1.0.0
+openai==1.58.1
+google-generativeai==0.3.2
+twilio==8.10.0
+pymongo==4.6.0

@@ -4,6 +4,7 @@ A minimal hackathon-ready web app for video consultations with AI assistance.
 
 ## 🚀 Quick Start (5 Minutes)
 
+
 ### Prerequisites
 - Python 3.8+
 - Node.js 16+
